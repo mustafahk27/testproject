@@ -1,10 +1,23 @@
-import {useState} from "react";
+```typescript
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-
-
 export default function App() {
+  // Define time slots for the timetable
+  const timeSlots = [
+    "09:00 - 10:00",
+    "10:00 - 11:00",
+    "11:00 - 12:00",
+    "12:00 - 13:00",
+    "13:00 - 14:00",
+    "14:00 - 15:00",
+    "15:00 - 16:00",
+    "16:00 - 17:00"
+  ];
+  // Sample timetable data
+  const [timetable, setTimetable] = useState(
+    Array(timeSlots.length).fill(null)
+  );
   const [count, setCount] = useState(0);
-
   return (
     <main className="bg-gray-100 min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow text-center">
@@ -19,3 +32,4 @@ export default function App() {
     </main>
   );
 }
+```
